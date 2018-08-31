@@ -16,10 +16,12 @@ bind-tools
 jq
 nmap-ncat
 bash
+ngrep
+vim
 
 
 Running Instructions
 --
 This container is intended to be started up, run some commands, then removed when you exit:
 
-`docker run -d -i -t --rm oliverisaac/alpine-nettools`
+`docker run -i -t --rm oliverisaac/alpine-nettools`
