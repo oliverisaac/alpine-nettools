@@ -1,7 +1,7 @@
 Alpine Net Tools Docker Container
 --
 
-I needed a container with good networking toolsets and bash set to vi mode. (raesene/alpine-nettools)[https://github.com/raesene/alpine-nettools] was a great starting point for me.
+I needed a container with good networking toolsets and bash set to vi mode. [raesene/alpine-nettools](https://github.com/raesene/alpine-nettools) was a great starting point for me.
 
 Based on alpine to keep the image nice and small.
 
@@ -20,7 +20,6 @@ bash
 
 Running Instructions
 --
-`docker run -d -p 2200:22 oliverisaac/alpine-nettools`
+This container is intended to be started up, run some commands, then removed when you exit:
 
-`docker ps` - Get the container name
-
+`docker run -d -i -t --rm oliverisaac/alpine-nettools`
