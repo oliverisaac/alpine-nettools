@@ -9,7 +9,8 @@ on:
 env:
   REGISTRY: docker.io
   IMAGE_NAME: oliverisaac/alpine-nettools
-  TARGETS: "default"
+  TEST_TARGETS: ""
+  PUSH_TARGET: "default"
 
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
 jobs:
@@ -28,7 +29,7 @@ jobs:
       - name: Build the Docker image
         run: |
           set -eEuo pipefail
-          targets=( ${TARGETS} )
+          targets=( ${TEST_TARGETS} )
           for t in "${targets[@]}"; do
             docker build . --file Dockerfile --target="$t"
           done
@@ -63,7 +64,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          target: ${{ env.TARGET }}
+          target: ${{ env.PUSH_TARGET }}
 
       # This step generates an artifact attestation for the image, which is an unforgeable statement about where and how it was built. It increases supply chain security for people who consume the image. For more information, see [Using artifact attestations to establish provenance for builds](/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
       - name: Generate artifact attestation
