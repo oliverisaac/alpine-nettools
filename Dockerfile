@@ -5,6 +5,7 @@ LABEL "Author"="Oliver Isaac <oisaac@gmail.com>"
 RUN apk --update add \
     openssl \
     ngrep \
+    git \
     vim \
     nmap \
     nmap-scripts \
