@@ -1,4 +1,4 @@
-FROM alpine:latest AS default
+FROM alpine:latest AS release
 
 LABEL "Author"="Oliver Isaac <oisaac@gmail.com>"
 
