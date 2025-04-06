@@ -9,6 +9,7 @@ RUN apk --update add \
     vim \
     nmap \
     rsync \
+    openssh \
     nmap-scripts \
     curl \
     tcpdump \
