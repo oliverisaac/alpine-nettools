@@ -16,6 +16,7 @@ RUN apk --update add \
     bind-tools \
     jq \
     nmap-ncat \
+    kubectl \
     bash \
     busybox-extras \
     && rm -rf /var/cache/apk/*
