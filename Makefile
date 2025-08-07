@@ -3,7 +3,7 @@
 .PHONY: all
 
 build:
-	docker build -t oliverisaac/alpine-nettools:$$( date +%Y.%m.%d )  .
+	docker build --platform=linux/amd64 -t oliverisaac/alpine-nettools:$$( date +%Y.%m.%d )  .
 
 push:
 	docker push oliverisaac/alpine-nettools:$$( date +%Y.%m.%d )
